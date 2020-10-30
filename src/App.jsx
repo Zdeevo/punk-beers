@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './App.module.scss'
 import CardList from '../src/components/CardList'
 
-function App() {
+const App = () => {
 
   const [beers, setBeers] = useState([]);
 
-  fetch('https://api.punkapi.com/v2/beers/10')
-    .then(res => res.json())
+  const getBeers = async () => {
+
+     return await fetch('https://api.punkapi.com/v2/beers')
+    .then((res) => res.json())
     .then((res) => {
       setBeers(res);
-    })
+      console.log(beers);
+    });
+  };
+
+  useEffect(() => {
+    getBeers();
+    console.log('useEffect was called');
+  }, [])
 
   return (
     <div className={styles.app}>
