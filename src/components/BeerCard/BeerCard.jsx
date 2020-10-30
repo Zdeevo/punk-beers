@@ -15,13 +15,13 @@ const BeerCard = (props) => {
       
       <img src={image_url} alt="https://via.placeholder.com/200" className={styles.image}/>
     
-      <p className={styles.name}>
+      <h1 className={styles.name}>
         {name}
-      </p>
+      </h1>
    
-      <p className={styles.tagline}>
-        {tagline}
-      </p>
+      <h2 className={styles.tagline}>
+        '{tagline}'
+      </h2>
   
       <p className={styles.description}>
         {shortenDescription(description)}

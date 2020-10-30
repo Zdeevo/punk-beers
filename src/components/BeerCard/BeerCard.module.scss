@@ -11,38 +11,38 @@
   border: 2px solid grey;
   background-color: darkslategray;
   height: 20vh;
+  margin: 5px 0;
+  color: whitesmoke;
+  font-family: monospace;
+  font-size: 1.25rem;
 }
 
 .image {
+  display: flex;
   grid-area: 1 / 1 / span 6 / span 1;
   height: 100%;
   padding: 5px;
-  background-color: magenta;
-  justify-content: center;
-  align-content: center;
+  justify-self: center;
 }
 
 .name {
   grid-area: 1 / 2 / span 2 / span 1;
-  height: 100%;
   margin: 1px;
-  background-color: deepskyblue;
-  font-size: 2rem;
+  align-self: center;
 }
 
 .tagline {
-  grid-area: 2 / 2 / span 1 / span 1;
-  height: 100%;
+  grid-area: 3 / 2 / span 1 / span 1;
   margin: 1px;
-  background-color: yellow;
-  font-size: 1rem;
+  font-size: 1.25rem;
+  font-style: italic;
+  align-self: center;
 }
 
 .description {
-  grid-area: 3 / 2 / span 3 / span 1;
-  height: 100%;
+  grid-area: 4 / 2 / span 3 / span 1;
   margin: 1px;
-  background-color: green;
+  align-self: center;
 }
 
 
