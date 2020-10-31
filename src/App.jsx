@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './App.module.scss'
-import CardList from '../src/components/CardList'
+import CardList from '../src/components/CardList/CardList';
+import SideBar from '../src/components/SideBar/SideBar';
+import TopBar from '../src/components/TopBar/TopBar';
 
 const App = () => {
 
@@ -22,9 +24,17 @@ const App = () => {
   }, [])
 
   return (
-    <div className={styles.app}>
-      <CardList beers={beers}/>
+    
+    <div className={styles.app} >
+      
+        <TopBar className={styles.topBar}/>
+
+        <SideBar className={styles.sideBar}/>
+
+        <CardList beers={beers} className={styles.cardList} />
+
     </div>
+
   );
 }
 

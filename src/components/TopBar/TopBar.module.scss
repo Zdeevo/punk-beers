@@ -1,0 +1,25 @@
+
+.topBar {
+  display: inline-flex;
+  background-color: darkslategrey;
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100vw;
+  z-index: 100;
+  border-bottom: 3px solid darkmagenta;
+  justify-content: space-between;
+  padding-right: 75px;
+  .title {
+    font-size: 1.25rem;
+    color: ivory;
+    text-shadow: 2px 2px darkmagenta;
+    padding-left: 25px;
+  }
+  .googleIcon {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: ivory;
+    text-shadow: 2px 2px darkmagenta;
+  }
+}

@@ -2,12 +2,9 @@ import React from 'react'
 import styles from './BeerCard.module.scss'
 
 const BeerCard = (props) => {
-  const shortenDescription = (description) =>
-    description.length < 300
-      ? description
-      : description.substring(0, 200) + "...";
+  
 
-  const { image_url, name, tagline, description } = props.beer
+  const { image_url, name, tagline, description,  } = props.beer
 
 
   return (
@@ -24,7 +21,7 @@ const BeerCard = (props) => {
       </h2>
   
       <p className={styles.description}>
-        {shortenDescription(description)}
+        {description}
       </p>
     </div>
   )
