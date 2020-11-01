@@ -3,29 +3,44 @@
 .sideBar {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background-color: #32746d;
   height: 100%;
   width: 200px;
   box-shadow: 1px 0 5px 1px magenta;
   margin-right: 10px;
   margin-top: 100px;
+  padding-top: 50px;
   position: fixed;
   top: 0;
   left: 0;
   .sideBarTitle {
     text-align: center;
     padding-bottom: 20px;
-    text-shadow: 1px 2px darkmagenta;
+    text-shadow: 1px 1px darkmagenta;
   }
   .checkList {
     padding: 10px;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: bolder;
-    .goBtn {
-      padding:0 10px ;
-      justify-items: center;
-
+    .checkBox {
+      cursor: pointer;
+      background-color: darkmagenta;
     }
+    // .goBtn {
+    //   padding:0 10px ;
+    //   font-size: 1.75rem;
+    //   justify-items: center;
+    //   background-color: #204b46;
+    //   color: ivory;
+    //   border: 1px solid magenta;
+    //   width: 100%;
+    //   outline: none;
+    //   &:hover {
+    //     box-shadow: 0px 0px 10px 0px darkmagenta;
+    //   }
+    //   &:active {
+    //     box-shadow: 0px 0px 15px 0px darkmagenta;
+    //   }
+    // }
   }
 }

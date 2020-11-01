@@ -14,34 +14,60 @@
   height: auto;
   color: ivory;
   font-size: 1.25rem;
+  padding: 5px;
   .image {
     display: flex;
     align-self: center;
-    grid-area: 1 / 1 / span 6 / span 1;
+    grid-area: 1 / 1 / span 7 / span 1;
     max-height: 25vh;
     max-width: 90%;
-    padding: 5px;
+    margin: 5px;
     justify-self: center;
+
+
   }
   .name {
     grid-area: 1 / 2 / span 2 / span 1;
     margin: 1px;
     align-self: center;
-    text-shadow: 2px 2px darkmagenta;
+    text-shadow: 3px 3px 5px darkmagenta;
   }
   .tagline {
     grid-area: 3 / 2 / span 1 / span 1;
     margin: 1px;
-    font-size: 1.25rem;
-    font-style: italic;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 3px darkmagenta;
     align-self: center;
+    .abv {
+      padding-left: 10px;
+    }
   }
   .description {
     grid-area: 4 / 2 / span 3 / span 1;
     margin: 1px;
     padding: 2px;
-    align-self: center;
-    font-size: 1.1rem;
+    align-self: center;   
+    text-shadow: 1px 1px 2px darkmagenta;
+    .descriptionHeading {
+      font-size: 1.5rem;
+    }
+    .descriptionText {
+      font-style: italic; 
+      font-size: 1.3rem;
+    }
+  }
+  .foodPairs {
+    grid-area: 7 / 2 / span 1 / span 1;
+    margin: 1px;
+    padding: 2px;
+    align-self: center;   
+    text-shadow: 1px 1px 2px darkmagenta;
+    .foodPairsHeading {
+      font-size: 1.5rem;
+    }
+    .foodPairsItem {
+      font-size: 1.3rem; 
+    }
   }
 }
 

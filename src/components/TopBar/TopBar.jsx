@@ -11,9 +11,9 @@ const TopBar = () => {
         <h1>
           Steve's Big Fat Punk Beers List
         </h1>
-        <h2>
-          A Beer List For Funsies!!  
-        </h2>
+        <h3>
+          A totally pointless beer list cos, y'know... Beer!!
+        </h3>
       </div>
       <div >
        <a href="" className={styles.googleIcon}>Google</a>
