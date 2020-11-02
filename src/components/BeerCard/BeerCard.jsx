@@ -4,9 +4,16 @@ import styles from './BeerCard.module.scss'
 const BeerCard = (props) => {
   
 
-  const { image_url, name, tagline, description, food_pairing, abv } = props.beer
+  const { 
+    image_url, 
+    name, 
+    tagline, 
+    description, 
+    food_pairing, 
+    abv 
+  } = props.beer
 
-  const randomNum = Math.floor(Math.random() * Math.floor(80))
+  // const randomNum = Math.floor(Math.random() * Math.floor(80))
 
   return (
     <div className={styles.beerCard}>
@@ -28,9 +35,7 @@ const BeerCard = (props) => {
       <p className={styles.description}>
         <span className={styles.descriptionHeading}>Description: </span>
         <span className={styles.descriptionText}> '{description}'</span>
-        
-
-        
+      
       </p>
 
       <p className={styles.foodPairs}> 

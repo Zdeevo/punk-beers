@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './TopBar.module.scss';
+import SearchBox from '../SearchBox/SearchBox'
 
-const TopBar = () => {
+const TopBar = (props) => {
+
+  const { updateSearchText } = props;
 
   return (
     
@@ -15,8 +18,11 @@ const TopBar = () => {
           A totally pointless beer list cos, y'know... Beer!!
         </h3>
       </div>
-      <div >
-       <a href="" className={styles.googleIcon}>Google</a>
+      <div className={styles.searchBox}>
+      <SearchBox
+          placeholder="Search for recipes..."
+          updateSearchText={updateSearchText}
+        />
       </div>
       
     </div>

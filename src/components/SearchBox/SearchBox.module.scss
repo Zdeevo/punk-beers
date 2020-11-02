@@ -1,0 +1,31 @@
+
+.search {
+  input {
+    height: 100%;
+    width: 100px;
+    vertical-align: top;
+    margin-right: 50px;
+    font-size: 15px;
+    // padding-left: $base-spacing;
+    border: none;
+    border-bottom: darkmagenta;
+    color: magenta;
+
+    &:focus {
+      outline: none;
+      border-color: rgb(236, 69, 102);
+      color: rgb(236, 69, 102);
+    }
+
+    &::placeholder {
+      color: rgb(199, 197, 197);
+    }
+  }
+
+  .fa {
+    &:hover {
+      cursor: pointer;
+      color: rgb(236, 69, 102);
+    }
+  }
+}

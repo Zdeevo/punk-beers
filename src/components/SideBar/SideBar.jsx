@@ -9,6 +9,7 @@ const SideBar = () => {
 
   <div className={styles.sideBar}>
 
+    {/* split out into different h2 tags */}
     <h2 className={styles.sideBarTitle} >Need help finding something? <br/><br/> Try the beer filter below.<br/><br/></h2>
 
     <ul className={styles.checkList}>
