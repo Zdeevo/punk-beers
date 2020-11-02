@@ -3,6 +3,7 @@ import styles from './App.module.scss'
 import CardList from '../src/components/CardList/CardList';
 import SideBar from '../src/components/SideBar/SideBar';
 import TopBar from '../src/components/TopBar/TopBar';
+import library from './data/fa-library';
 
 const App = () => {
 
@@ -21,17 +22,20 @@ const App = () => {
     fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
       .then((res) => res.json())
       .then((res) => {
-        const beers = res.map(getBeers);
-        setBeers(beers);
+
+        // how do i map over a data set with no name???
+    
+        const beerData = res.map(getBeers);
+        setBeers(beerData);
       })
-      // .catch((err) => {
-      //   console.log(err);
-      // });
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {
     getBeers();
-    // console.log('useEffect was called');
+    console.log('useEffect was called');
   }, [])
 
   return (

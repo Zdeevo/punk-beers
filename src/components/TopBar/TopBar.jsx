@@ -20,7 +20,7 @@ const TopBar = (props) => {
       </div>
       <div className={styles.searchBox}>
       <SearchBox
-          placeholder="Search for recipes..."
+          placeholder="Search for beers..."
           updateSearchText={updateSearchText}
         />
       </div>

@@ -9,7 +9,6 @@ const BeerCard = (props) => {
     name, 
     tagline, 
     description, 
-    food_pairing, 
     abv 
   } = props.beer
 
@@ -38,7 +37,7 @@ const BeerCard = (props) => {
       
       </p>
 
-      <p className={styles.foodPairs}> 
+      {/* <p className={styles.foodPairs}> 
         <span className={styles.foodPairsHeading}> 
           Pairs well with: 
         </span>
@@ -46,7 +45,7 @@ const BeerCard = (props) => {
         <span className={styles.foodPairsItem}>{food_pairing.map((foodPair) => {
         return <span> '{foodPair}' </span>})}
         </span>
-      </p>
+      </p> */}
 
     </div>
   )

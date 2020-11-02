@@ -2,11 +2,11 @@
 .search {
   input {
     height: 100%;
-    width: 100px;
+    width: 200px;
     vertical-align: top;
-    margin-right: 50px;
+    margin-left: 50px;
     font-size: 15px;
-    // padding-left: $base-spacing;
+    padding-left: 20px;
     border: none;
     border-bottom: darkmagenta;
     color: magenta;
@@ -25,7 +25,7 @@
   .fa {
     &:hover {
       cursor: pointer;
-      color: rgb(236, 69, 102);
+      color: darkmagenta;
     }
   }
-}
+} 
