@@ -1,6 +1,7 @@
 
 .topBar {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   background-color: darkslategrey;
   position: fixed;
   top: 0;
@@ -8,19 +9,22 @@
   width: 100vw;
   z-index: 1;
   border-bottom: 3px solid darkmagenta;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding-right: 75px;
   .title {
-    font-size: 1.25rem;
-    color: ivory;
-    text-shadow: 2px 2px darkmagenta;
-    padding-left: 25px;
-  }
-  .googleIcon {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: ivory;
-    text-shadow: 2px 2px darkmagenta;
+    h1 {
+      font-size: 3rem;
+      color: ivory;
+      text-shadow: 2px 2px darkmagenta;
+    }
+    h3 {
+      font-size: 1.25rem;
+      color: ivory;
+      text-shadow: 2px 2px darkmagenta;
+      justify-content: center;
+      align-items: center;
+      }
+    
   }
 }

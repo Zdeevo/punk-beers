@@ -9,23 +9,34 @@
   box-shadow: 1px 0 5px 1px magenta;
   margin-right: 10px;
   margin-top: 100px;
-  padding-top: 50px;
+  padding-top: 75px;
   position: fixed;
   top: 0;
   left: 0;
   .sideBarTitle {
     text-align: center;
-    padding-bottom: 20px;
     text-shadow: 1px 1px darkmagenta;
+    h2 {
+      margin-bottom: 20px;
+    }
   }
   .checkList {
     padding: 10px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: bolder;
+    align-items: center;
+    margin-bottom: 20px;
     .checkBox {
       cursor: pointer;
       background-color: darkmagenta;
+      margin: 12px 0;
     }
-  
+  }
+  .searchTitle {
+    text-align: center;
+    text-shadow: 1px 1px darkmagenta;
+    h2 {
+      margin-bottom: 25px;
+    }
   }
 }

@@ -2,14 +2,13 @@ import React from 'react'
 import styles from './BeerCard.module.scss'
 
 const BeerCard = (props) => {
-  
 
   const { 
     image_url, 
     name, 
     tagline, 
     description, 
-    abv 
+    abv, food_pairing
   } = props.beer
 
   // const randomNum = Math.floor(Math.random() * Math.floor(80))
@@ -37,7 +36,7 @@ const BeerCard = (props) => {
       
       </p>
 
-      {/* <p className={styles.foodPairs}> 
+      <p className={styles.foodPairs}> 
         <span className={styles.foodPairsHeading}> 
           Pairs well with: 
         </span>
@@ -45,7 +44,7 @@ const BeerCard = (props) => {
         <span className={styles.foodPairsItem}>{food_pairing.map((foodPair) => {
         return <span> '{foodPair}' </span>})}
         </span>
-      </p> */}
+      </p>
 
     </div>
   )

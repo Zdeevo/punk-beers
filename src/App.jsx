@@ -9,33 +9,35 @@ const App = () => {
 
   const [beers, setBeers] = useState([]);
 
+  const [ searchedBeers, setSearchedBeers ] = useState(beers);
+
   const getBeers = async () => {
     return await fetch('https://api.punkapi.com/v2/beers?page=1&per_page=80')
       .then((res) => res.json())
       .then((res) => {
         setBeers(res);
-        // console.log(beers);
       });
   };
+  
 
-  const grabBeers = (searchTerm) => {
-    fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
-      .then((res) => res.json())
-      .then((res) => {
 
-        // how do i map over a data set with no name???
-    
-        const beerData = res.map(getBeers);
-        setBeers(beerData);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  // const grabBeers = (searchTerm) => {
+  //   fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
+  //     .then((res) => res.json())
+  //     .then((res) => {
+        
+  //       // how do i map over a data set with no name???
+  //       console.log(res)
+  //       const beerData = res.map(getBeers);
+  //       setBeers(beerData);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   useEffect(() => {
     getBeers();
-    console.log('useEffect was called');
   }, [])
 
   return (
@@ -43,9 +45,8 @@ const App = () => {
     <div className={styles.app} >
       
         <TopBar 
-          beers={beers} 
           className={styles.topBar}
-          updateSearchText={grabBeers}
+            // updateSearchText={grabBeers}
         />
 
         <SideBar className={styles.sideBar}/>
