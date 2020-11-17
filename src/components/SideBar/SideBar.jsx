@@ -1,46 +1,77 @@
-import React from 'react';
-import styles from './SideBar.module.scss';
-import SearchBox from '../SearchBox/SearchBox'
+import React from "react";
+import styles from "./SideBar.module.scss";
+import SearchBox from "../SearchBox/SearchBox";
 
 const SideBar = (props) => {
+  const {filterWeak, setFilterWeak, filterMedium, setFilterMedium, filterStrong, setFilterStrong, weakBeers, mediumBeers, strongBeers } = props;
 
-  const { updateSearchText } = props;
+  // const resetFilters = () => {
+  //   document.getElementsByClassName("radio").checked = false;
+  //   console.log("The button was pushed!!");
+  // };
+
+
+  const weakTicked = () => {
+    setFilterWeak(!filterWeak);
+    weakBeers();
+  }
+
+  const mediumTicked = () => {
+    setFilterMedium(!filterMedium);
+    mediumBeers();
+  }
+
+  const strongTicked = () => {
+    setFilterStrong(!filterStrong);
+    strongBeers();
+  }
+
 
   return (
+    <div className={styles.sideBar}>
+      <div className={styles.sideBarTitle}>
+        <h2>Need help finding something? </h2>
+        <h2>Try the beer filter below.</h2>
+      </div>
 
-  <div className={styles.sideBar}>
+      <div className={styles.checkList}>
+        <label htmlFor="weak">
+          <input
+            type="checkbox"
+            value="weak"
+            name="strength"
+            className="checkbox"            
+            onClick={() => {weakTicked()}}
+          />
+          I like 0 - 5% ABV
+        </label>
 
-    <div className={styles.sideBarTitle} >
-      <h2>Need help finding something? </h2> 
-      <h2>Try the beer filter below.</h2>
-    </div>
-    <ul className={styles.checkList}>
-      <li>
-        <input className={styles.checkBox} type="checkbox" id="weak" name="type2" value="weak"/>
-        <label htmlFor="weak"> I like 0 - 5% ABV</label>
-      </li>
+        <label htmlFor="medium">
+          <input
+            type="checkbox"
+            value="medium"
+            name="strength"
+            className="checkbox"  
+            onClick={() => {mediumTicked()}}          
+          />
+          I like 5 - 10% ABV
+        </label>
 
-      <li>
-        <input className={styles.checkBox} type="checkbox" id="strong" name="type1" value="strong"/>
-        <label htmlFor="strong"> I like 5 - 10% ABV</label>
-      </li>
+        <label htmlFor="strong">
+          <input
+            type="checkbox"
+            value="strong"
+            name="strength"
+            className="checkbox"
+            onClick={() => {strongTicked()}}
+          />
+          I like over 10% ABV
+        </label>
 
-      <li>
-        <input className={styles.checkBox} type="checkbox" id="bitter" name="type3" value="bitter"/>
-        <label htmlFor="bitter"> I like over 10% ABV</label>
-      </li>
+        <button >Reset Filters</button>
+      </div>
 
-      <li>
-        <input className={styles.checkBox} type="checkbox" id="dark" name="type3" value="dark"/>
-        <label htmlFor="dark"> I like dark beers!</label>
-      </li>
-
-      <li>  
-        <input className={styles.checkBox} type="checkbox" id="light" name="type3" value="light"/>
-        <label htmlFor="light"> I like light beers!</label>
-      </li>
-    </ul>
-
+      {/* 
     <div className={styles.searchTitle}>
         <h2>
           Or the handy search box.
@@ -56,11 +87,9 @@ const SideBar = (props) => {
           placeholder="Search for beers..."
           updateSearchText={updateSearchText}
         />
-      </div>
+      </div> */}
+    </div>
+  );
+};
 
-  </div>
-
-  )
-}
-
-export default SideBar
+export default SideBar;

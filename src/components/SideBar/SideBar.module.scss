@@ -21,12 +21,14 @@
     }
   }
   .checkList {
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     font-size: 1.15rem;
     font-weight: bolder;
-    align-items: center;
+    align-items: left;
     margin-bottom: 20px;
-    .checkBox {
+    input {
       cursor: pointer;
       background-color: darkmagenta;
       margin: 12px 0;
