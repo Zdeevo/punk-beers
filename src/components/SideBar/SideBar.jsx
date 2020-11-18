@@ -3,7 +3,7 @@ import styles from "./SideBar.module.scss";
 import SearchBox from "../SearchBox/SearchBox";
 
 const SideBar = (props) => {
-  const {filterWeak, setFilterWeak, filterMedium, setFilterMedium, filterStrong, setFilterStrong, weakBeers, mediumBeers, strongBeers } = props;
+  const {filterWeak, setFilterWeak, filterMedium, setFilterMedium, filterStrong, setFilterStrong, weakBeers, mediumBeers, strongBeers, updateSearchText, searchTerm, setSearchTerm } = props;
 
   // const resetFilters = () => {
   //   document.getElementsByClassName("radio").checked = false;
@@ -82,7 +82,9 @@ const SideBar = (props) => {
       <div className={styles.searchBox}>
       <SearchBox
           placeholder="Search for beers..."
-          // updateSearchText={updateSearchText}
+          updateSearchText={updateSearchText}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
         />
       </div>
     </div>

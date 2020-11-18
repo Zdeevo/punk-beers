@@ -3,11 +3,14 @@ import styles from "./App.module.scss";
 import CardList from "../src/components/CardList/CardList";
 import SideBar from "../src/components/SideBar/SideBar";
 import TopBar from "../src/components/TopBar/TopBar";
+import library from './data/fa-library';
 
 const App = () => {
-  const [beerSearch, setBeerSearch] = useState([]);
+  
 
   const [beers, setBeers] = useState([]);
+
+  const [ searchTerm, setSearchTerm ] = useState("");
 
   const [filterWeak, setFilterWeak] = useState(false);
 
@@ -26,7 +29,7 @@ const App = () => {
 
   let mediumBeers = () => {
     if (filterMedium === true) {
-      const myMediumBeers = beers.filter((beer) => beer.abv > 5 <= 10);
+      const myMediumBeers = beers.filter((beer) => (beer.abv > 5) && (beer.abv <= 10));
       setBeers(myMediumBeers);
     } else {
       return null;
@@ -43,26 +46,42 @@ const App = () => {
   };
 
   const getBeers = async () => {
-    return await fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80")
+
+    const searchBeersByName = searchTerm ? `&beer_name=${searchTerm}` : "";
+
+    const url = `https://api.punkapi.com/v2/beers?per_page=80${searchBeersByName}`;
+
+    return await fetch(url)
       .then((res) => res.json())
       .then((res) => {
         setBeers(res);
       });
   };
 
+  //-----------------------------------------------------------
+
   // search for beers using API 'beer_name' search parameter
-  const searchBeers = async () => {
-    return await fetch("https://api.punkapi.com/v2/beers?beer_name=${search}")
-      .then((res) => res.json())
-      .then((res) => {
-        setBeerSearch(res);
-      });
-  };
+//  const grabBeers = async () => {
+//     return await fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
+//       .then((res) => res.json())
+//       .then((res) => {
+//         setBeers(res);
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//   };
+
+
+  //----------------------------------------------------------------
 
   useEffect(() => {
     getBeers();
-    searchBeers();
-  }, [filterWeak, filterMedium, filterStrong]);
+  }, [filterWeak, filterMedium, filterStrong, searchTerm]);
+
+  // useEffect(() => {
+  //   grabBeers();
+  // }, [searchTerm]);
 
   return (
     <div className={styles.app}>
@@ -79,12 +98,16 @@ const App = () => {
         weakBeers={weakBeers}
         mediumBeers={mediumBeers}
         strongBeers={strongBeers}
+        updateSearchText={getBeers}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+
       />
 
       <CardList
         beers={beers}
         className={styles.cardList}
-        beerSearch={beerSearch}
+        
       />
     </div>
   );
