@@ -18,11 +18,6 @@ const SideBar = (props) => {
     setSearchTerm,
   } = props;
 
-  // const resetFilters = () => {
-  //   document.getElementsByClassName("radio").checked = false;
-  //   console.log("The button was pushed!!");
-  // };
-
   const weakTicked = () => {
     setFilterWeak(!filterWeak);
     weakBeers();
