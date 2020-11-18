@@ -1,7 +1,6 @@
-
 .topBar {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 70px auto 130px;
   background-color: darkslategrey;
   position: fixed;
   top: 0;
@@ -9,22 +8,34 @@
   width: 100vw;
   z-index: 1;
   border-bottom: 3px solid darkmagenta;
-  justify-content: center;
-  align-items: center;
-  padding-right: 75px;
+  .brewdogLogo {
+    width: 70px;
+    margin: 5px;
+  }
+  .punkApi {
+    font-size: 1.8rem;
+    justify-self: center;
+    align-self: center;
+    padding-right: 20px;
+    color: ivory;
+    text-shadow: 2px 2px darkmagenta;
+    text-decoration: none;
+  }
   .title {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
     h1 {
       font-size: 3rem;
       color: ivory;
       text-shadow: 2px 2px darkmagenta;
     }
     h3 {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       color: ivory;
       text-shadow: 2px 2px darkmagenta;
-      justify-content: center;
-      align-items: center;
-      }
-    
+    }
   }
 }

@@ -17,7 +17,10 @@
     text-align: center;
     text-shadow: 1px 1px darkmagenta;
     h2 {
-      margin-bottom: 20px;
+      margin-bottom: 50px;
+    }
+    h3 {
+      font-size: 1.4rem;
     }
   }
   .checkList {
@@ -25,19 +28,24 @@
     flex-direction: column;
     padding: 10px;
     font-size: 1.15rem;
+    text-shadow: 0px 0px 1px darkmagenta;
     font-weight: bolder;
     align-items: left;
     margin-bottom: 20px;
+    span {
+      padding-left: 8px;
+    }
     input {
       cursor: pointer;
-      background-color: darkmagenta;
       margin: 12px 0;
     }
   }
   .searchTitle {
     text-align: center;
     text-shadow: 1px 1px darkmagenta;
-    h2 {
+    padding-top: 40px;
+    h3 {
+      font-size: 1.4rem;
       margin-bottom: 25px;
     }
   }

@@ -3,14 +3,12 @@ import styles from "./App.module.scss";
 import CardList from "../src/components/CardList/CardList";
 import SideBar from "../src/components/SideBar/SideBar";
 import TopBar from "../src/components/TopBar/TopBar";
-import library from './data/fa-library';
+import library from "./data/fa-library";
 
 const App = () => {
-  
-
   const [beers, setBeers] = useState([]);
 
-  const [ searchTerm, setSearchTerm ] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const [filterWeak, setFilterWeak] = useState(false);
 
@@ -29,7 +27,9 @@ const App = () => {
 
   let mediumBeers = () => {
     if (filterMedium === true) {
-      const myMediumBeers = beers.filter((beer) => (beer.abv > 5) && (beer.abv <= 10));
+      const myMediumBeers = beers.filter(
+        (beer) => beer.abv > 5 && beer.abv <= 10
+      );
       setBeers(myMediumBeers);
     } else {
       return null;
@@ -46,7 +46,6 @@ const App = () => {
   };
 
   const getBeers = async () => {
-
     const searchBeersByName = searchTerm ? `&beer_name=${searchTerm}` : "";
 
     const url = `https://api.punkapi.com/v2/beers?per_page=80${searchBeersByName}`;
@@ -58,30 +57,9 @@ const App = () => {
       });
   };
 
-  //-----------------------------------------------------------
-
-  // search for beers using API 'beer_name' search parameter
-//  const grabBeers = async () => {
-//     return await fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
-//       .then((res) => res.json())
-//       .then((res) => {
-//         setBeers(res);
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   };
-
-
-  //----------------------------------------------------------------
-
   useEffect(() => {
     getBeers();
   }, [filterWeak, filterMedium, filterStrong, searchTerm]);
-
-  // useEffect(() => {
-  //   grabBeers();
-  // }, [searchTerm]);
 
   return (
     <div className={styles.app}>
@@ -101,14 +79,8 @@ const App = () => {
         updateSearchText={getBeers}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
-
       />
-
-      <CardList
-        beers={beers}
-        className={styles.cardList}
-        
-      />
+      <CardList beers={beers} className={styles.cardList} />
     </div>
   );
 };
