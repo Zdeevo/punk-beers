@@ -5,7 +5,7 @@ import SideBar from "../src/components/SideBar/SideBar";
 import TopBar from "../src/components/TopBar/TopBar";
 
 const App = () => {
-  // const [ input, setInput ] = useState("");
+  const [beerSearch, setBeerSearch] = useState([]);
 
   const [beers, setBeers] = useState([]);
 
@@ -18,29 +18,29 @@ const App = () => {
   let weakBeers = () => {
     if (filterWeak === true) {
       const myWeakBeers = beers.filter((beer) => beer.abv <= 5);
-      setBeers(myWeakBeers)
-  }
-  else {
-    return null
-  }}
+      setBeers(myWeakBeers);
+    } else {
+      return null;
+    }
+  };
 
   let mediumBeers = () => {
     if (filterMedium === true) {
-     const myMediumBeers = beers.filter((beer) => beer.abv > 5 <= 10);
-      setBeers(myMediumBeers)
+      const myMediumBeers = beers.filter((beer) => beer.abv > 5 <= 10);
+      setBeers(myMediumBeers);
+    } else {
+      return null;
     }
-    else {
-      return null
-    }}
+  };
 
   let strongBeers = () => {
     if (filterStrong === true) {
-    const myStrongBeers = beers.filter((beer) => beer.abv > 10);
-    setBeers(myStrongBeers)
-  }
-  else {
-    return null
-  }}
+      const myStrongBeers = beers.filter((beer) => beer.abv > 10);
+      setBeers(myStrongBeers);
+    } else {
+      return null;
+    }
+  };
 
   const getBeers = async () => {
     return await fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80")
@@ -50,16 +50,23 @@ const App = () => {
       });
   };
 
+  // search for beers using API 'beer_name' search parameter
+  const searchBeers = async () => {
+    return await fetch("https://api.punkapi.com/v2/beers?beer_name=${search}")
+      .then((res) => res.json())
+      .then((res) => {
+        setBeerSearch(res);
+      });
+  };
+
   useEffect(() => {
     getBeers();
-  }, []);
+    searchBeers();
+  }, [filterWeak, filterMedium, filterStrong]);
 
   return (
     <div className={styles.app}>
-      <TopBar
-        className={styles.topBar}
-        // updateSearchText={grabBeers}
-      />
+      <TopBar className={styles.topBar} />
 
       <SideBar
         className={styles.sideBar}
@@ -74,7 +81,11 @@ const App = () => {
         strongBeers={strongBeers}
       />
 
-      <CardList beers={beers} className={styles.cardList} />
+      <CardList
+        beers={beers}
+        className={styles.cardList}
+        beerSearch={beerSearch}
+      />
     </div>
   );
 };

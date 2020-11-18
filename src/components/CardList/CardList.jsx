@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from'./CardList.module.scss'
 import BeerCard from '../BeerCard';
 

@@ -26,7 +26,6 @@ const SideBar = (props) => {
     strongBeers();
   }
 
-
   return (
     <div className={styles.sideBar}>
       <div className={styles.sideBarTitle}>
@@ -41,7 +40,7 @@ const SideBar = (props) => {
             value="weak"
             name="strength"
             className="checkbox"            
-            onClick={() => {weakTicked()}}
+            onChange={() => {weakTicked()}}
           />
           I like 0 - 5% ABV
         </label>
@@ -52,7 +51,7 @@ const SideBar = (props) => {
             value="medium"
             name="strength"
             className="checkbox"  
-            onClick={() => {mediumTicked()}}          
+            onChange={() => {mediumTicked()}}          
           />
           I like 5 - 10% ABV
         </label>
@@ -63,15 +62,13 @@ const SideBar = (props) => {
             value="strong"
             name="strength"
             className="checkbox"
-            onClick={() => {strongTicked()}}
+            onChange={() => {strongTicked()}}
           />
           I like over 10% ABV
         </label>
-
-        <button >Reset Filters</button>
       </div>
 
-      {/* 
+      
     <div className={styles.searchTitle}>
         <h2>
           Or the handy search box.
@@ -85,9 +82,9 @@ const SideBar = (props) => {
       <div className={styles.searchBox}>
       <SearchBox
           placeholder="Search for beers..."
-          updateSearchText={updateSearchText}
+          // updateSearchText={updateSearchText}
         />
-      </div> */}
+      </div>
     </div>
   );
 };
