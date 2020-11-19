@@ -10,9 +10,6 @@ const SideBar = (props) => {
     setFilterMedium,
     filterStrong,
     setFilterStrong,
-    weakBeers,
-    mediumBeers,
-    strongBeers,
     updateSearchText,
     searchTerm,
     setSearchTerm,
@@ -20,24 +17,21 @@ const SideBar = (props) => {
 
   const weakTicked = () => {
     setFilterWeak(!filterWeak);
-    weakBeers();
   };
 
   const mediumTicked = () => {
     setFilterMedium(!filterMedium);
-    mediumBeers();
   };
 
   const strongTicked = () => {
     setFilterStrong(!filterStrong);
-    strongBeers();
   };
 
   return (
     <div className={styles.sideBar}>
       <div className={styles.sideBarTitle}>
         <h2>Need help finding something? </h2>
-        <h3>Try the beer filter below.</h3>
+        <h3>Try the beer strength filter below.</h3>
       </div>
 
       <div className={styles.checkList}>
@@ -47,9 +41,7 @@ const SideBar = (props) => {
             value="weak"
             name="strength"
             className="checkbox"
-            onChange={() => {
-              weakTicked();
-            }}
+            onChange={weakTicked}
           />
           <span>I like 0 - 5% ABV</span>
         </label>
@@ -60,9 +52,7 @@ const SideBar = (props) => {
             value="medium"
             name="strength"
             className="checkbox"
-            onChange={() => {
-              mediumTicked();
-            }}
+            onChange={mediumTicked}
           />
           <span>I like 5 - 10% ABV</span>
         </label>
@@ -73,9 +63,7 @@ const SideBar = (props) => {
             value="strong"
             name="strength"
             className="checkbox"
-            onChange={() => {
-              strongTicked();
-            }}
+            onChange={strongTicked}
           />
           <span>I like over 10% ABV</span>
         </label>

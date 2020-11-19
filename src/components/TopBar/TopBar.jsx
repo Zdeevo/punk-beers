@@ -4,7 +4,11 @@ import styles from "./TopBar.module.scss";
 const TopBar = () => {
   return (
     <div className={styles.topBar}>
-      <a href="https://www.brewdog.com/uk/" target="_blank">
+      <a
+        href="https://www.brewdog.com/uk/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <img
           src="https://presshub.brewdog.com/images/cms/original/1440777209BREWDOGLOGO.jpg"
           alt="BrewDog logo"
@@ -18,6 +22,7 @@ const TopBar = () => {
       <a
         href="https://punkapi.com/documentation/v2"
         target="_blank"
+        rel="noopener noreferrer"
         className={styles.punkApi}
       >
         Punk API

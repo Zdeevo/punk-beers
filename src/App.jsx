@@ -21,7 +21,7 @@ const App = () => {
       const myWeakBeers = beers.filter((beer) => beer.abv <= 5);
       setBeers(myWeakBeers);
     } else {
-      return null;
+      getBeers();
     }
   };
 
@@ -32,7 +32,7 @@ const App = () => {
       );
       setBeers(myMediumBeers);
     } else {
-      return null;
+      getBeers();
     }
   };
 
@@ -41,7 +41,7 @@ const App = () => {
       const myStrongBeers = beers.filter((beer) => beer.abv > 10);
       setBeers(myStrongBeers);
     } else {
-      return null;
+      getBeers();
     }
   };
 
@@ -59,7 +59,21 @@ const App = () => {
 
   useEffect(() => {
     getBeers();
-  }, [filterWeak, filterMedium, filterStrong, searchTerm]);
+  }, [searchTerm]);
+
+  useEffect(() => {
+    weakBeers();
+  }, [filterWeak]);
+
+  useEffect(() => {
+    mediumBeers();
+  }, [filterMedium]);
+
+  useEffect(() => {
+    strongBeers();
+  }, [filterStrong]);
+
+
 
   return (
     <div className={styles.app}>
